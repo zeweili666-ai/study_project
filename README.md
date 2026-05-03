@@ -80,53 +80,58 @@
 
 ## 本地运行
 
+这个项目可以被任何下载到代码的人本地运行，不只针对作者自己的电脑。普通体验建议先用方式一；如果需要保存到文件或使用文件解析功能，再选择方式二或方式三。
+
 ### 方式一：直接打开前端
 
-直接用浏览器打开：
+适合：最快速体验，不想安装任何环境。
 
-```text
-index.html
-```
+操作：
 
-这种方式不需要后端，数据会保存到浏览器本地存储。
+1. 下载或解压项目文件夹。
+2. 双击打开 `index.html`。
+
+说明：
+
+- 不需要启动后端。
+- 数据会保存在当前浏览器的本地存储里。
+- 换浏览器或清理浏览器数据后，本地数据可能不会保留。
 
 ### 方式二：启动 PowerShell 本地服务
 
-双击：
+适合：Windows 用户，希望数据保存在项目文件夹里的 `data.json`。
 
-```text
-start_server.bat
-```
+操作：
 
-或者在 PowerShell 中运行：
+1. 双击 `start_server.bat`。
+2. 浏览器访问 `http://127.0.0.1:5177`。
+
+也可以在 PowerShell 中运行：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\server.ps1
 ```
 
-然后访问：
+说明：
 
-```text
-http://127.0.0.1:5177
-```
-
-这种方式会使用项目目录下的 `data.json` 保存数据。
+- 需要 Windows 自带的 PowerShell。
+- 数据会保存到项目目录下的 `data.json`。
 
 ### 方式三：启动 SQLite 后端
 
-双击：
+适合：想使用完整功能，包括 SQLite 数据库存储、PDF / DOCX 文件文字提取。
 
-```text
-start_sqlite_server.bat
-```
+操作：
 
-然后访问：
+1. 确认电脑已安装 Java。
+2. 双击 `start_sqlite_server.bat`。
+3. 浏览器访问 `http://127.0.0.1:5177`。
 
-```text
-http://127.0.0.1:5177
-```
+说明：
 
-这种方式会使用 SQLite 数据库保存数据，并支持 PDF / DOCX 文件文字提取。
+- 数据会保存到本地 SQLite 数据库。
+- 支持 PDF / DOCX 文件文字提取。
+- 如果只是快速体验项目，可以先不用这个方式。
 
 ## 项目结构
 
